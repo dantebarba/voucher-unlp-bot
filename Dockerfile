@@ -1,4 +1,4 @@
-FROM python:2.7.16-alpine3.8
+FROM python:2.7-slim
 
 ENV TOKEN ''
 ENV API_URL 'http://127.0.0.1:5000'
