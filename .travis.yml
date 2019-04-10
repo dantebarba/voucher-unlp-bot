@@ -1,0 +1,11 @@
+services:
+  - docker
+
+script:
+- docker build -t dantebarba/voucher-unlp:latest .
+- docker run -d -p 127.0.0.1:5000:5000 dantebarba/voucher-unlp:latest /bin/sh -c "python -m unittest test/test_get_voucher.py"
+- docker ps -a
+
+deploy:
+- docker login --username=$DOCKER_USER --password=$DOCKER_PASSWORD
+- docker push dantebarba/voucher-unlp-bot:latest
