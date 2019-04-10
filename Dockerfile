@@ -8,4 +8,4 @@ WORKDIR /opt/app
 RUN pip install -r requirements.txt
 COPY . /opt/app
 
-CMD ["python", "src/run_voucher_api.py", "--token=$TOKEN"]
+CMD ["python", "src/run_voucher_api.py", "--token=${TOKEN}", "--api=${API_URL}"]
