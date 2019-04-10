@@ -1,6 +1,7 @@
 FROM python:2.7.16-alpine3.8
 
 ENV TOKEN ''
+ENV API_URL 'http://127.0.0.1:5000'
 
 COPY requirements.txt /opt/app/requirements.txt
 WORKDIR /opt/app
