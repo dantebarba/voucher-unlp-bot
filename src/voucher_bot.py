@@ -20,9 +20,8 @@ class VoucherBot():
 
     def start(self, bot, update):
         ''' Mensaje inicial del voucher '''
-        bot.send_message(chat_id=update.message.chat_id,text='''Bienvenido a 
-        Voucher-Unlp-Bot, el bot que recupera el voucher del Wifi. 
-        Ingrese /voucher para obtener el voucher del dia''')
+        bot.send_message(chat_id=update.message.chat_id,text='''Bienvenido a Voucher-Unlp-Bot, el bot que recupera el voucher del Wifi. 
+Ingrese /voucher para obtener el voucher del dia''')
     
     def voucher(self, bot, update):
         ''' Devuelve el voucher '''
@@ -44,5 +43,5 @@ class VoucherHttpRetriever():
 
     @staticmethod
     def retrieve(url):
-        _contents = urllib2.urlopen(url).read()
+        return urllib2.urlopen(url).read()
 
